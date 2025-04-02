@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "C9+LlFzwZ194J4lMmrPW4ObULiEKkeAhsq3fJEVZOac=",
+  "Source": "WatchEcom.Api",
+  "BasePath": "_content/WatchEcom.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

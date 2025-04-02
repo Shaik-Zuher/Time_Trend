@@ -1,0 +1,6 @@
+@WatchEcom.Api_HostAddress = http://localhost:5194
+
+GET {{WatchEcom.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
