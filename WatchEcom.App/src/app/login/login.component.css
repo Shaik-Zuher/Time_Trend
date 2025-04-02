@@ -1,11 +1,14 @@
-/* Main container */
 .login-wrapper {
+    background-image: url("../../assets/Login_wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f8f9fa;
     padding: 20px;
+    margin:-8px!important;
   }
   
   /* Login box */
@@ -22,11 +25,6 @@
   .login-header {
     text-align: center;
     margin-bottom: 30px;
-  }
-  
-  .logo {
-    height: 50px;
-    margin-bottom: 16px;
   }
   
   .title {
@@ -63,15 +61,7 @@
     position: relative;
     display: flex;
     align-items: center;
-  }
-  
-  .icon {
-    position: absolute;
-    left: 14px;
-    color: #999;
-    font-size: 16px;
-  }
-  
+  }  
   .visibility {
     position: absolute;
     right: 14px;
@@ -93,33 +83,6 @@
     outline: none;
     border-color: #0066cc;
   }
-  
-  /* Options row */
-  .options-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 16px 0 24px;
-  }
-  
-  .remember-me {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #555;
-    cursor: pointer;
-  }
-  
-  .remember-me input {
-    margin-right: 8px;
-  }
-  
-  .forgot-password {
-    font-size: 14px;
-    color: #0066cc;
-    text-decoration: none;
-  }
-  
   /* Login button */
   .login-button {
     width: 100%;
@@ -153,67 +116,6 @@
   .error-message i {
     margin-right: 8px;
   }
-  
-  /* Divider */
-  .divider {
-    display: flex;
-    align-items: center;
-    margin: 24px 0;
-  }
-  
-  .divider-line {
-    flex: 1;
-    height: 1px;
-    background-color: #eee;
-  }
-  
-  .divider-text {
-    padding: 0 12px;
-    font-size: 14px;
-    color: #999;
-  }
-  
-  /* Social login */
-  .social-login {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  
-  .social-button {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    background: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .social-button:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .social-button i {
-    font-size: 18px;
-  }
-  
-  .social-button.google i {
-    color: #DB4437;
-  }
-  
-  .social-button.facebook i {
-    color: #4267B2;
-  }
-  
-  .social-button.apple i {
-    color: #000;
-  }
-  
   /* Register prompt */
   .register-prompt {
     text-align: center;

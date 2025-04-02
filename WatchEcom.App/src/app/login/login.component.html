@@ -1,7 +1,7 @@
 <div class="login-wrapper">
   <div class="login-box">
     <div class="login-header">
-      <img class="logo" src="assets/images/watch-logo.png" alt="Luxury Watches">
+      <h1>Time</h1>
       <h2 class="title">Welcome Back</h2>
       <p class="subtitle">Sign in to your account</p>
     </div>
@@ -10,13 +10,11 @@
       <div class="form-field">
         <label for="email">Email</label>
         <div class="input-container">
-          <i class="icon fas fa-envelope"></i>
           <input 
             type="email" 
             id="email" 
             [(ngModel)]="username" 
             name="username" 
-            placeholder="your@email.com" 
             required
           >
         </div>
@@ -25,39 +23,21 @@
       <div class="form-field">
         <label for="password">Password</label>
         <div class="input-container">
-          <i class="icon fas fa-lock"></i>
           <input 
             type="password" 
             id="password" 
             [(ngModel)]="password" 
             name="password" 
-            placeholder="••••••••" 
             required
           >
-          <i class="visibility fas fa-eye"></i>
         </div>
       </div>
-
-      <div class="options-row">
-        <label class="remember-me">
-          <input type="checkbox" name="remember">
-          <span>Remember me</span>
-        </label>
-        <a class="forgot-password" href="#">Forgot password?</a>
-      </div>
-
       <button type="submit" class="login-button">Sign In</button>
 
       <div *ngIf="errorMessage" class="error-message">
-        <i class="fas fa-exclamation-circle"></i>
         <span>{{ errorMessage }}</span>
       </div>
     </form>
-
-    
-
-    
-
     <div class="register-prompt">
       Don't have an account? 
       <a class="register-link" (click)="navigateToRegister()">Sign up</a>

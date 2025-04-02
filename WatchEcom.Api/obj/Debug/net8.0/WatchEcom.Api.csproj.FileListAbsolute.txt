@@ -147,3 +147,4 @@ C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\refint\WatchEcom.Api.d
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.pdb
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.genruntimeconfig.cache
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\ref\WatchEcom.Api.dll
+C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.sourcelink.json
