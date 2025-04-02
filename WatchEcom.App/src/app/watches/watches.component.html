@@ -1,6 +1,11 @@
 <div>
   <h2>Watches</h2>
-  <ul>
+
+  <div *ngIf="watches.length === 0">
+    <p>No watches available. Add a new one!</p>
+  </div>
+
+  <ul *ngIf="watches.length > 0">
     <li *ngFor="let watch of watches">
       <strong>{{ watch.brand }} - {{ watch.model }}</strong>
       <p>{{ watch.description }}</p>
