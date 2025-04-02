@@ -1,15 +1,20 @@
-<div>
-  <h2>Watches</h2>
-
-  <div *ngIf="watches.length === 0">
-    <p>No watches available. Add a new one!</p>
-  </div>
-
-  <ul *ngIf="watches.length > 0">
-    <li *ngFor="let watch of watches">
-      <strong>{{ watch.brand }} - {{ watch.model }}</strong>
+<div class="watch-container">
+  <h2>Luxury Watches Collection</h2>
+  <div class="watch-grid">
+    <div *ngFor="let watch of watches" class="watch-card">
+      <img [src]="watch.imageUrl" alt="{{ watch.brand }}" class="watch-image" />
+      <h3>{{ watch.brand }}</h3>
       <p>{{ watch.description }}</p>
       <p>Price: {{ watch.price | currency }}</p>
-    </li>
-  </ul>
+      <button (click)="addToCart(watch)">🛒 Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Cart Section -->
+<div class="cart-section">
+  <button (click)="viewCart()" class="view-cart-button">
+    🛒 View Cart ({{ cart.length }})
+  </button>
+</div>
+  
 </div>

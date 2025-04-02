@@ -28,21 +28,37 @@ namespace WatchEcom.Api.Controllers
 
         // ✅ GET: api/Watch (List All Watches)
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Watch>>> GetWatches()
+        public async Task<ActionResult<IEnumerable<object>>> GetWatches()
         {
-            return await _context.Watches.ToListAsync();
+            return await _context.Watches.Select(w => new
+            {
+                w.Id,
+                w.Brand,
+                w.Model,
+                w.Price,
+                w.Description,
+                w.ImageUrl // ✅ Ensure this is included
+            }).ToListAsync();
         }
 
         // ✅ GET: api/Watch/5 (Get Watch by ID)
         [HttpGet("{id}")]
-        public async Task<ActionResult<Watch>> GetWatch(int id)
+        public async Task<ActionResult<object>> GetWatch(int id)
         {
             var watch = await _context.Watches.FindAsync(id);
             if (watch == null)
             {
                 return NotFound();
             }
-            return watch;
+            return new
+            {
+                watch.Id,
+                watch.Brand,
+                watch.Model,
+                watch.Price,
+                watch.Description,
+                watch.ImageUrl
+            };
         }
 
         // ✅ POST: api/Watch (Create New Watch)

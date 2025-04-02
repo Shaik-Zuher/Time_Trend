@@ -18,25 +18,53 @@ namespace WatchEcom.Api.Controllers
             _context = context;
         }
 
-        // GET: api/Order/user/5
+        // ✅ Get all orders for a specific user
         [HttpGet("user/{userId}")]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrdersByUser(int userId)
         {
             var orders = await _context.Orders
                 .Where(o => o.UserId == userId)
-                .Include(o => o.Watches)
+                .Include(o => o.Watches) // ✅ Ensure watches are included
                 .ToListAsync();
-            return orders;
+
+            if (orders == null || !orders.Any())
+            {
+                return NotFound(new { message = "No orders found for this user." });
+            }
+
+            return Ok(orders);
         }
 
-        // POST: api/Order
+        // ✅ Place a new order
         [HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
+            if (order == null || order.Watches == null || !order.Watches.Any())
+            {
+                return BadRequest(new { message = "Invalid order data." });
+            }
+
             order.OrderDate = DateTime.UtcNow;
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
+
             return CreatedAtAction(nameof(GetOrdersByUser), new { userId = order.UserId }, order);
+        }
+
+        // ✅ Delete an order by ID
+        [HttpDelete("{orderId}")]
+        public async Task<IActionResult> DeleteOrder(int orderId)
+        {
+            var order = await _context.Orders.FindAsync(orderId);
+            if (order == null)
+            {
+                return NotFound(new { message = "Order not found." });
+            }
+
+            _context.Orders.Remove(order);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Order deleted successfully." });
         }
     }
 }

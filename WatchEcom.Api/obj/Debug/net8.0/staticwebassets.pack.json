@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\1.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\10.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\2.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\3.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\4.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\5.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\6.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\7.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\8.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\9.jpg",
+      "PackagePath": "staticwebassets\\images\\watches\\9.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WatchEcom.Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WatchEcom.Api.props",
+      "PackagePath": "build\\WatchEcom.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WatchEcom.Api.props",
+      "PackagePath": "buildMultiTargeting\\WatchEcom.Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WatchEcom.Api.props",
+      "PackagePath": "buildTransitive\\WatchEcom.Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

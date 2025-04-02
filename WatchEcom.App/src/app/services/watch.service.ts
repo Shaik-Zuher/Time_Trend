@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class WatchService {
-  private apiUrl = 'http://localhost:7071/api/watches'; // ✅ Adjust to your backend
+  private apiUrl = 'http://localhost:5194/api/Watch';
 
   constructor(private http: HttpClient) {}
 

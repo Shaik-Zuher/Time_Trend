@@ -43,7 +43,7 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins("http://localhost:4200")
                   .AllowAnyHeader()
-                  .AllowAnyMethod() // ✅ Ensures POST requests work
+                  .AllowAnyMethod()
                   .AllowCredentials();
         });
 });
@@ -91,7 +91,10 @@ builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
-// ✅ Ensure Swagger is available
+// ✅ Serve Static Files (For Images)
+app.UseStaticFiles();  // 🔥 Now your images in wwwroot/images/watches/ are accessible
+
+// ✅ Ensure Swagger is available in Development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
