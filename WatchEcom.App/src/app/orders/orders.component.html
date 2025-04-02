@@ -1,3 +1,10 @@
+<header class="header">
+  <nav class="nav" id="nav-menu">
+      <div class="nav-content bd-grid">
+          <span class="nav-name">Time Trend</span>
+      </div>
+  </nav>
+</header>
 <div class="orders-container">
   <h2>Your Orders</h2>
 
@@ -8,6 +15,7 @@
       <p>{{ order.description }}</p>
       <p>Price: {{ order.price | currency }}</p>
     </div>
+    <br>
     <button (click)="clearOrders()">🗑️ Clear Orders</button>
   </div>
 

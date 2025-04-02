@@ -1,6 +1,100 @@
+
+:root {
+  --first-color: #5B65F5;
+  --first-color-light: #C4C7F5;
+  --dark-color: #0E1026;
+  --white-color: #FBFBFB;
+
+  --body-font: 'Open Sans', sans-serif;
+  --nav-name-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+      --nav-name-font-size: 1rem;
+      --normal-font-size: 1rem;
+  }
+}
+
+*,::before,::after { box-sizing: border-box; }
+ul { margin: 0; padding: 0; list-style: none; }
+a { text-decoration: none; }
+.bd-grid { max-width: 1024px; display: grid; grid-template-columns: 100%; margin-left: 1.5rem; margin-right: 1.5rem; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 1rem;
+  background-color: #1c1c1c;
+  border-bottom: 2px solid gold;
+  color: gold;
+  z-index: var(--z-fixed);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+@media screen and (max-width: 768px) {
+  .nav {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 80%;
+      height: 100vh;
+      padding: 2rem 0;
+      z-index: var(--z-fixed);
+      transition: .5s;
+      overflow-y: auto;
+  }
+
+  .show { left: 0; }
+}
+
+.nav-content { display: flex; flex-direction: column; }
+.nav-perfil { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 3rem; }
+.nav-img { display: flex; justify-content: center; width: 60px; height: 60px; border-radius: 50%; overflow: hidden; margin-bottom: 1rem; }
+  .nav-img img { width: 70px; }
+.nav-name { display: block; font-size: var(--nav-name-font-size); color: var(--white-color); }
+.nav-item { margin-bottom: 2rem; }
+.nav-link { color: var(--first-color-light); }
+.nav-link:hover { color: var(--white-color); }
+.active { color: var(--white-color); }
+
+
+@media screen and (min-width: 576px) {
+  .nav { width: 288px; }
+}
+
+@media screen and (min-width: 768px) {
+  .header { height: 80px; }
+  .header-logo{ display: none; }
+
+  .nav { width: 100%; }
+  .nav-content { flex-direction: row; justify-content: space-between; align-items: center; }
+  .nav-perfil { flex-direction: row; text-align: initial; margin-bottom: 0; }
+  .nav-name { color: var(--dark-color); }
+  .nav-list { display: flex; align-items: center; }
+  .nav-item { margin: 0 1.5rem; padding: 1.4rem 0; cursor:grabbing }
+  .nav-link { color: var(--dark-color); }
+      .nav-link:hover { color: var(--first-color); }
+  .active { color: var(--first-color); }
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {  margin-left: auto; margin-right: auto; }
+}
 .watch-container {
+  background: linear-gradient(to bottom, #1a1a1a, #292929, #3d3d3d);
     text-align: center;
     padding: 20px;
+    margin-top: 80px;
+    color:white;
   }
   
   .watch-grid {
@@ -49,7 +143,14 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+  .view-cart-button{
+    background-color: rgb(67, 180, 67);
+    color:black;
+  }
+  .view-cart-button:hover{
+    background-color:green;
+    color:black;
+  }
   button:hover {
     background-color: #0056b3;
   }

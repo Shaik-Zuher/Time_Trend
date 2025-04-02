@@ -71,7 +71,6 @@ export class OrdersComponent implements OnInit {
       console.warn('⚠️ localStorage is not available.');
     }
   }
-
   // ✅ NEW: Get logged-in user safely
   private getLoggedInUser(): string | null {
     return typeof window !== 'undefined' && localStorage

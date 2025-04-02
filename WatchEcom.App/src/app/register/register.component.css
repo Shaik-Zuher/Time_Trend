@@ -1,7 +1,7 @@
 
 /* Full-screen centering */
 .container {
-  background-image: url("../../assets/Login_wallpaper.jpg");
+  background-image: url("../../assets/Loginwallpaper.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -65,7 +65,7 @@
   border-radius: 5px;
   cursor: pointer;
   margin-top: 15px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition:0.3s ease;
 }
 
 .form-box button:hover {

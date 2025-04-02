@@ -67,10 +67,13 @@ export class WatchesComponent implements OnInit {
     console.log('Cart Updated:', this.cart);
   }
 
+
   viewCart() {
     this.router.navigate(['/orders']); // ✅ Ensure redirection works
   }
-
+  Logout() {
+    this.router.navigate(['/login']); // ✅ Ensure redirection works
+  }
   private getLoggedInUser(): string | null {
     return typeof window !== 'undefined' && localStorage
       ? localStorage.getItem('loggedInUser')

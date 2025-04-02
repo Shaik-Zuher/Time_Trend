@@ -1,5 +1,20 @@
+<header class="header">
+  <a  class="header-logo">Time Trend</a>
+  <nav class="nav" id="nav-menu">
+      <div class="nav-content bd-grid">
+          <span class="nav-name">Time Trend</span>
+          <div class="nav-menu">
+              <ul class="nav-list">
+                  <li class="nav-item"><a class="nav-link active">Home</a></li>
+                  <li class="nav-item" (click)="viewCart()"><a class="nav-link ">My Cart</a></li>
+                  <li class="nav-item" (click)="Logout()"><a href="#" class="nav-link ">Logout</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+</header>
 <div class="watch-container">
-  <h2>Luxury Watches Collection</h2>
+  <h2>Watch stock</h2>
   <div class="watch-grid">
     <div *ngFor="let watch of watches" class="watch-card">
       <img [src]="watch.imageUrl" alt="{{ watch.brand }}" class="watch-image" />
@@ -9,9 +24,8 @@
       <button (click)="addToCart(watch)">🛒 Add to Cart</button>
     </div>
   </div>
-
-  <!-- Cart Section -->
-<div class="cart-section">
+<br>
+  <div class="cart-section">
   <button (click)="viewCart()" class="view-cart-button">
     🛒 View Cart ({{ cart.length }})
   </button>
