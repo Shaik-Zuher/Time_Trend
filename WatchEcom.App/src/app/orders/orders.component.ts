@@ -9,9 +9,9 @@ import { CommonModule, CurrencyPipe, NgIf } from '@angular/common';
   imports: [CommonModule, CurrencyPipe, NgIf],
 })
 export class OrdersComponent implements OnInit {
-  orders: any[] = []; // User's cart items (Orders)
+  orders: any[] = []; 
   totalAmount: number = 0;
-  userCartKey: string = ''; // Stores the unique key for the current user's cart
+  userCartKey: string = '';
 
   ngOnInit() {
     this.initializeUserCart();
@@ -25,7 +25,7 @@ export class OrdersComponent implements OnInit {
       return;
     }
 
-    this.userCartKey = `cart_${user}`; // Unique cart key for each user
+    this.userCartKey = `cart_${user}`; 
     this.loadOrders();
   }
 
@@ -57,21 +57,19 @@ export class OrdersComponent implements OnInit {
     }
 
     alert('✅ Order placed successfully! Thank you for shopping with us.');
-    this.clearOrders(); // ✅ Clear cart after placing order
+    this.clearOrders(); 
   }
 
-  // ✅ NEW: Clear orders manually
   clearOrders() {
     if (typeof window !== 'undefined' && localStorage) {
-      localStorage.removeItem(this.userCartKey); // ✅ Remove cart for this user
+      localStorage.removeItem(this.userCartKey); 
       this.orders = [];
       this.totalAmount = 0;
-      console.log('🗑️ Cart cleared.');
+      console.log('Cart cleared.');
     } else {
       console.warn('⚠️ localStorage is not available.');
     }
   }
-  // ✅ NEW: Get logged-in user safely
   private getLoggedInUser(): string | null {
     return typeof window !== 'undefined' && localStorage
       ? localStorage.getItem('loggedInUser')
