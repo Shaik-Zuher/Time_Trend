@@ -1,0 +1,10 @@
+<div>
+  <h2>Watches</h2>
+  <ul>
+    <li *ngFor="let watch of watches">
+      <strong>{{ watch.brand }} - {{ watch.model }}</strong>
+      <p>{{ watch.description }}</p>
+      <p>Price: {{ watch.price | currency }}</p>
+    </li>
+  </ul>
+</div>

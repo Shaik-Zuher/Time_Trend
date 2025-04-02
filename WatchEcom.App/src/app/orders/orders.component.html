@@ -1,0 +1,14 @@
+<div>
+    <h2>Your Orders</h2>
+    <ul>
+      <li *ngFor="let order of orders">
+        <p>Order Date: {{ order.orderDate | date }}</p>
+        <ul>
+          <li *ngFor="let watch of order.watches">
+            {{ watch.brand }} - {{ watch.model }}: {{ watch.price | currency }}
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
