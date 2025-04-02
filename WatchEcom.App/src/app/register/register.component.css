@@ -1,3 +1,4 @@
+
 /* Full-screen centering */
 .container {
     background-image: url("../../assets/Login_wallpaper.jpg");
@@ -54,19 +55,22 @@
   }
   
   /* Submit button */
-  .form-box button {
+.form-box button {
     width: 100%;
     padding: 10px;
-    background: #000000;
+    background: #000;
     color: white;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
-  }
-  
-  .form-box button:hover {
-    background: #000000;
-  }
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-box button:hover {
+    background: #333; /* Darker gray for effect */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
   
