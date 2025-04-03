@@ -88,7 +88,7 @@ npm install -g @angular/cli
 ## 9. Navigate to Frontend Folder
 
 ```bash
-cd ../WatchEcom.App
+cd WatchEcom.App
 ```
 
 ## 10. Install Dependencies
@@ -114,4 +114,6 @@ Makireddy Siva Sai Teja - teja41622@gmail.com
 
 Shaik Zuheruddin - zuheruddinshaik@gmail.com
 
-Sai Satya Navya Sri Vasamsetti -navya4814@gmail.com 
+Sai Satya Navya Sri Vasamsetti - navya4814@gmail.com 
+
+KONETI RAM SAI VENKATA DURGA PRASAD - ramsaikoneti9383@gmail.com
