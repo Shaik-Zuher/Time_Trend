@@ -8,6 +8,7 @@ Mysql
 
 
 You will need 2 terminals.
+---
 # Steps to Set Up & Run the Project 
 
 
