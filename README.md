@@ -14,7 +14,9 @@ You will need 2 terminals.
 ## 1.Clone Repositoy or Download Zip file
 
 If zip file downloaded extract them.
-or
+
+OR
+
 To Clone Repository
 open vscode terminal, run:
 
@@ -29,6 +31,7 @@ Check version
 ```bash
 dotnet --version
 ```
+
 If not installed, download from: [Net 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ## 3. Navigate to API Folder
@@ -55,6 +58,7 @@ json
   "DefaultConnection": "server=localhost;port=3306;database=WatchEcomDB;user=root;password=YourPassword;"
 }
 ```
+
 Replace localhost,user,password with your mysql credentials.
 
 ## 6. Apply Database Migrations
@@ -62,6 +66,7 @@ Replace localhost,user,password with your mysql credentials.
 ```bash
 dotnet ef database update
 ```
+
 (If dotnet ef is missing, install it using )  
 
 ```bash
@@ -71,7 +76,7 @@ dotnet tool install --global dotnet-ef
 ```bash
 dotnet run
 ```
-API will be available at https://localhost:5001/api/
+API will be available at https://localhost:5194/api/
 
 ## Now open another Terminal-In Vscode Terminal>new Terminal(We need 2 terminals running simultaneously)
 ## 8. Install Node.js & Angular CLI
