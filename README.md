@@ -1,7 +1,9 @@
 # Time Trend
 
 Angular Cli-19
+
 Asp.Net Version 8.0.0(Using latest versions creates problems connecting database)
+
 Mysql
 
 
@@ -19,8 +21,6 @@ open vscode terminal, run:
 ```bash
 git clone https://github.com/Shaik-Zuher/Watches.git
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 ## 2. Install .NET 8 SDK* (if not installed)  
 
@@ -109,6 +109,9 @@ Frontend will be available at http://localhost:4200/
 ## *Testing*
 - Open *http://localhost:4200/* in a browser.
 
-# Memebers
+# Members
 Makireddy Siva Sai Teja - teja41622@gmail.com
+
+Shaik Zuheruddin - zuheruddinshaik@gmail.com
+
 Sai Satya Navya Sri Vasamsetti -navya4814@gmail.com 
