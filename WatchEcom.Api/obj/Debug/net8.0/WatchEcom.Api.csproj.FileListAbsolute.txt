@@ -1,5 +1,6 @@
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\bin\Debug\net8.0\appsettings.json
+C:\Users\zuher\Desktop\Exp\WatchEcom.Api\bin\Debug\net8.0\WatchEcom.Api.staticwebassets.runtime.json
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\bin\Debug\net8.0\WatchEcom.Api.exe
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\bin\Debug\net8.0\WatchEcom.Api.deps.json
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\bin\Debug\net8.0\WatchEcom.Api.runtimeconfig.json
@@ -133,6 +134,7 @@ C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.Assembly
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.csproj.CoreCompileInputs.cache
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.sourcelink.json
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\staticwebassets\msbuild.WatchEcom.Api.Microsoft.AspNetCore.StaticWebAssets.props
@@ -147,5 +149,3 @@ C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\refint\WatchEcom.Api.d
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.pdb
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.genruntimeconfig.cache
 C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\ref\WatchEcom.Api.dll
-C:\Users\zuher\Desktop\Exp\WatchEcom.Api\obj\Debug\net8.0\WatchEcom.Api.sourcelink.json
-C:\Users\zuher\Desktop\Exp\WatchEcom.Api\bin\Debug\net8.0\WatchEcom.Api.staticwebassets.runtime.json
