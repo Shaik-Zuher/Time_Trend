@@ -109,6 +109,8 @@ Frontend will be available at http://localhost:4200/
 ## *Testing*
 - Open *http://localhost:4200/* in a browser.
 
+If you run into any errors use Chatgpt and Stack Overflow to fix errors.
+
 # Members
 Makireddy Siva Sai Teja - teja41622@gmail.com
 
