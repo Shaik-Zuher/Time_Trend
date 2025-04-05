@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-
+//namespace used to group different tables or models.
 namespace WatchEcom.Api.Models
 {
     public class Order
@@ -12,3 +10,4 @@ namespace WatchEcom.Api.Models
 }
 
 }
+//One namespace can have differnt classes but it easy to maintain with differnt files.
