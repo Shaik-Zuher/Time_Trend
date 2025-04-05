@@ -16,7 +16,7 @@ You will need 2 terminals.
 
 ## 1.Clone Repositoy or Download Zip file
 
-If zip file downloaded extract them.
+Fork repository and donwload zip file
 
 OR
 
@@ -81,7 +81,8 @@ dotnet run
 ```
 API will be available at https://localhost:5194/api/
 
-## Now open another Terminal-In Vscode Terminal>new Terminal(We need 2 terminals running simultaneously)
+## Now open another Terminal
+## In Vscode Terminal>new Terminal(We need 2 terminals running simultaneously)
 ## 8. Install Node.js & Angular CLI
 Check versions:  
 ```bash
