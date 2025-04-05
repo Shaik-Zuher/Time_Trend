@@ -1,4 +1,5 @@
 //namespace used to group different tables or models.
+//namespace name can be anything
 namespace WatchEcom.Api.Models
 {
     public class Order

@@ -1,3 +1,5 @@
+//namespace used to group different tables or models.
+//namespace name can be anything
 namespace WatchEcom.Api.Models
 {
     public class Watch
@@ -12,3 +14,4 @@ namespace WatchEcom.Api.Models
 }
 
 }
+//One namespace can have differnt classes but it easy to maintain with differnt files.
