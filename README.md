@@ -16,7 +16,7 @@ You will need 2 terminals.
 
 ## 1.Clone Repositoy or Download Zip file
 
-Fork repository and donwload zip file
+Fork repository and download zip file
 
 OR
 
