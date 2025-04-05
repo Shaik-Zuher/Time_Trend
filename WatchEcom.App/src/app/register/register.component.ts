@@ -16,8 +16,8 @@ export class RegisterComponent {
   password = '';
   message = '';
 
-  // 🔥 FIXED: Changed router from private → public
-  constructor(private authService: AuthService, public router: Router) {}
+  // Changed router from private → public
+  constructor(private authService: AuthService, public router: Router) {}//How it is connected to register.service.ts
 
   register() {
     this.authService.register(this.username, this.password).subscribe({
@@ -25,10 +25,10 @@ export class RegisterComponent {
         this.message = 'Registration successful! Redirecting to login...';
         setTimeout(() => {
           this.router.navigate(['/']);
-        }, 2000); // Redirect after 2 seconds
+        }, 1000);
       },
       error: () => {
-        this.message = 'Registration failed!';
+        this.message = 'Email already registered.';
       }
     });
   }

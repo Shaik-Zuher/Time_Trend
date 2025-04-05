@@ -14,10 +14,11 @@ export class WatchesComponent implements OnInit {
   watches: any[] = [];
   cart: any[] = [];
   apiBaseUrl: string = 'http://localhost:5194';
-  userCartKey: string = ''; // ✅ Unique cart key per user
+  userCartKey: string = ''; //  Unique cart key per user
 
   constructor(private watchService: WatchService, private router: Router) {}
 
+  //Starts automatically when pages are loaded
   ngOnInit() {
     this.watchService.getWatches().subscribe(
       (data) => {
@@ -30,7 +31,7 @@ export class WatchesComponent implements OnInit {
       }
     );
 
-    this.initializeUserCart(); // ✅ Load cart when page loads
+    this.initializeUserCart(); //  Load cart when page loads
   }
 
   private initializeUserCart() {
@@ -41,7 +42,7 @@ export class WatchesComponent implements OnInit {
       return;
     }
 
-    this.userCartKey = `cart_${user}`; // ✅ Unique cart key
+    this.userCartKey = `cart_${user}`; //  Unique cart key
     this.loadCart();
   }
 
@@ -69,10 +70,10 @@ export class WatchesComponent implements OnInit {
 
 
   viewCart() {
-    this.router.navigate(['/orders']); // ✅ Ensure redirection works
+    this.router.navigate(['/orders']); //  Ensure redirection works
   }
   Logout() {
-    this.router.navigate(['/login']); // ✅ Ensure redirection works
+    this.router.navigate(['/login']); //  Ensure redirection works
   }
   private getLoggedInUser(): string | null {
     return typeof window !== 'undefined' && localStorage

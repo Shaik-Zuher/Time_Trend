@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
-  selector: 'app-login',
+  selector: 'app-login',//Self tag like in html
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   imports: [CommonModule, FormsModule]
@@ -16,7 +16,7 @@ export class LoginComponent {
   password = '';
   errorMessage = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}//How it id connected to auth.service.ts
 
   login() {
     this.authService.login(this.username, this.password).subscribe({
@@ -31,6 +31,6 @@ export class LoginComponent {
   }
 
   navigateToRegister() {
-    this.router.navigate(['/register']); // 🔹 Navigate to register page
+    this.router.navigate(['/register']); // Navigate to register page
   }
 }

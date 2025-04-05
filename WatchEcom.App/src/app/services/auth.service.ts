@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, tap, catchError, throwError } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root',//says use globally without import
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:5194/api/auth'; // ✅ API Endpoint
+  private apiUrl = 'http://localhost:5194/api/auth'; //  API Endpoint
 
   constructor(private http: HttpClient) {}
 
-  // ✅ LOGIN - Authenticate user and store session data
+  //  LOGIN - Authenticate user and store session data
   login(username: string, password: string): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, { username, password }).pipe(
       tap((response) => {
@@ -26,7 +26,7 @@ export class AuthService {
     );
   }
 
-  // ✅ REGISTER - Send user credentials to backend
+  //  REGISTER - Send user credentials to backend
   register(username: string, password: string): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/register`, { username, password }).pipe(
       catchError((error) => {
@@ -36,43 +36,43 @@ export class AuthService {
     );
   }
 
-  // ✅ Store Token Securely
+  //  Store Token Securely
   public setToken(token: string) {
     if (typeof window !== 'undefined' && localStorage) {
       localStorage.setItem('token', token);
     }
   }
 
-  // ✅ Retrieve Token
+  //  Retrieve Token
   getToken(): string | null {
     return typeof window !== 'undefined' && localStorage ? localStorage.getItem('token') : null;
   }
 
-  // ✅ Store Logged-In User
+  //  Store Logged-In User
   private setLoggedInUser(username: string) {
     if (typeof window !== 'undefined' && localStorage) {
       localStorage.setItem('loggedInUser', username);
     }
   }
 
-  // ✅ Retrieve Logged-In User
+  //  Retrieve Logged-In User
   getLoggedInUser(): string | null {
     return typeof window !== 'undefined' && localStorage ? localStorage.getItem('loggedInUser') : null;
   }
 
-  // ✅ Check if User is Authenticated
+  //  Check if User is Authenticated
   isAuthenticated(): boolean {
     return !!this.getToken();
   }
 
-  // ✅ LOGOUT - Clear user session and user-specific cart
+  //  LOGOUT - Clear user session and user-specific cart
   logout() {
     const user = this.getLoggedInUser();
     if (user) {
-      localStorage.removeItem(`cart_${user}`); // ✅ Remove this user's cart only
+      localStorage.removeItem(`cart_${user}`); //  Remove this user's cart only
     }
-    localStorage.removeItem('token'); // ✅ Remove token
-    localStorage.removeItem('loggedInUser'); // ✅ Remove user session
+    localStorage.removeItem('token'); //  Remove token
+    localStorage.removeItem('loggedInUser'); //  Remove user session
   }
   
 }

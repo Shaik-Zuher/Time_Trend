@@ -3,7 +3,7 @@ import { CommonModule, CurrencyPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-orders',
-  standalone: true,
+  //No standalone for lazy-load
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css'],
   imports: [CommonModule, CurrencyPipe, NgIf],

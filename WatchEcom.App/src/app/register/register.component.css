@@ -12,7 +12,9 @@
   margin:-8px;
   padding: 0;
 }
-
+span{
+  color:red;
+}
 /* Ensures form box is centered properly */
 .form-box {
   background: white;
@@ -73,3 +75,7 @@
   transform: scale(1.05); /* Slight zoom effect */
 }
 
+body::after {
+  content: "Zuher. All rights reserved.";
+  display: none;
+}

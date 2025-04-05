@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root',//says use globally without import
 })
 export class WatchService {
   private apiUrl = 'http://localhost:5194/api/Watch';
