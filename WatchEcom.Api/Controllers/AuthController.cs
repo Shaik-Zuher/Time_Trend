@@ -1,20 +1,30 @@
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;//conatins ControllerBase class
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WatchEcom.Api.Models;
 using WatchEcom.Api.Data;
-using BCrypt.Net;
 
 namespace WatchEcom.Api.Controllers
 {
-    [ApiController]
-    [Route("api/auth")]
+    [ApiController] //→ Tells ASP.NET that this is an API controller (automatically handles model validation, JSON, etc.)
+    [Route("api/auth")] //→ Means all routes in here start with /api/auth
+
+
     public class AuthController : ControllerBase
+    //public class name_can_be anything :symbol for inheritance  ControllerBase is abstract class imported form line 1 module
+    /*
+     Ok(), BadRequest(), Unauthorized(), etc. → so you can return proper HTTP responses
+     Access to things like Request, User, ModelState
+     Model binding support (like [FromBody], [FromQuery])
+     Authentication info (User.Identity.Name, etc.)
+    */
     {
-        private readonly IConfiguration _config;
-        private readonly ApplicationDbContext _context;
+        private readonly IConfiguration _config;//_config → lets you access stuff from appsettings.json (like JWT keys)
+
+        private readonly ApplicationDbContext _context;//_context → your Entity Framework database context to query users
+
 
         public AuthController(IConfiguration config, ApplicationDbContext context)
         {
@@ -33,11 +43,23 @@ namespace WatchEcom.Api.Controllers
 
             var token = GenerateJwtToken(user);
             return Ok(new { token });
+            /*
+            Takes in a User (from JSON body)
+            Checks if the username exists and password is correct (BCrypt.Verify)
+            If good → generates a JWT token
+            If bad → returns 401 Unauthorized
+            */
         }
 
         [HttpPost("register")]
         public IActionResult Register([FromBody] User user)
         {
+            /*
+            Checks if username already exists
+            Hashes the password using BCrypt
+            Saves new user to the database
+            Returns success message
+            */
             if (_context.Users.Any(u => u.Username == user.Username))
             {
                 return BadRequest("Username already exists.");

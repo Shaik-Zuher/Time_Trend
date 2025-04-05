@@ -5,16 +5,16 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using WatchEcom.Api.Data;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);//Sets up web app
 
-// ✅ Configure MySQL with Pomelo
+//  Configure MySQL with Pomelo
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
-// ✅ Configure JWT Authentication
+//  Configure JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -35,7 +35,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// ✅ Enable CORS for Angular Frontend
+//  Enable CORS for Angular Frontend
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
@@ -48,7 +48,8 @@ builder.Services.AddCors(options =>
         });
 });
 
-// ✅ Add Swagger Configuration
+//  Add Swagger Configuration
+//Swagger is like built in postman used to test backend
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
@@ -58,7 +59,7 @@ builder.Services.AddSwaggerGen(options =>
         Description = "API for WatchEcom App"
     });
 
-    // ✅ Allow JWT Authentication in Swagger
+    //  Allow JWT Authentication in Swagger
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -91,10 +92,10 @@ builder.Services.AddEndpointsApiExplorer();
 
 var app = builder.Build();
 
-// ✅ Serve Static Files (For Images)
-app.UseStaticFiles();  // 🔥 Now your images in wwwroot/images/watches/ are accessible
+//  Serve Static Files (For Images)
+app.UseStaticFiles();  //  Now your images in wwwroot/images/watches/ are accessible
 
-// ✅ Ensure Swagger is available in Development
+// Ensure Swagger is available in Development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -104,7 +105,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-// ✅ Apply CORS Middleware BEFORE Authentication
+//  Apply CORS Middleware BEFORE Authentication
 app.UseCors("AllowFrontend");
 
 app.UseAuthentication();
@@ -112,4 +113,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.Run();//Run the app

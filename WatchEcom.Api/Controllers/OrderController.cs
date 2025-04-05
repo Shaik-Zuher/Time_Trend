@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WatchEcom.Api.Data;
-using WatchEcom.Api.Models;
+using Microsoft.AspNetCore.Mvc;//conatins ControllerBase class
+using Microsoft.AspNetCore.Authorization; //  Lets you use [Authorize] for securing endpoints with JWT
+using Microsoft.EntityFrameworkCore; //  Allows interaction with the database using Entity Framework
+using WatchEcom.Api.Data; //  This is your own project’s data layer (contains ApplicationDbContext)
+using WatchEcom.Api.Models; //  Your models like Watch.cs are in here
 
 namespace WatchEcom.Api.Controllers
 {
@@ -10,6 +10,13 @@ namespace WatchEcom.Api.Controllers
     [ApiController]
     [Authorize]
     public class OrderController : ControllerBase
+    //public class name_can_be anything :symbol for inheritance  ControllerBase is abstract class imported form line 1 module
+    /*
+     Ok(), BadRequest(), Unauthorized(), etc. → so you can return proper HTTP responses
+     Access to things like Request, User, ModelState
+     Model binding support (like [FromBody], [FromQuery])
+     Authentication info (User.Identity.Name, etc.)
+    */
     {
         private readonly ApplicationDbContext _context;
 
@@ -18,13 +25,13 @@ namespace WatchEcom.Api.Controllers
             _context = context;
         }
 
-        // ✅ Get all orders for a specific user
+        //  Get all orders for a specific user
         [HttpGet("user/{userId}")]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrdersByUser(int userId)
         {
             var orders = await _context.Orders
                 .Where(o => o.UserId == userId)
-                .Include(o => o.Watches) // ✅ Ensure watches are included
+                .Include(o => o.Watches) // Ensure watches are included
                 .ToListAsync();
 
             if (orders == null || !orders.Any())
@@ -35,7 +42,7 @@ namespace WatchEcom.Api.Controllers
             return Ok(orders);
         }
 
-        // ✅ Place a new order
+        // Place a new order
         [HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
@@ -51,7 +58,7 @@ namespace WatchEcom.Api.Controllers
             return CreatedAtAction(nameof(GetOrdersByUser), new { userId = order.UserId }, order);
         }
 
-        // ✅ Delete an order by ID
+        //  Delete an order by ID
         [HttpDelete("{orderId}")]
         public async Task<IActionResult> DeleteOrder(int orderId)
         {

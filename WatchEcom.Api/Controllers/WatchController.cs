@@ -1,16 +1,20 @@
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WatchEcom.Api.Data;
-using WatchEcom.Api.Models;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Mvc;//conatins ControllerBase class
+using Microsoft.AspNetCore.Authorization; //  Lets you use [Authorize] for securing endpoints with JWT
+using Microsoft.EntityFrameworkCore; //  Allows interaction with the database using Entity Framework
+using WatchEcom.Api.Data; //  This is your own project’s data layer (contains ApplicationDbContext)
+using WatchEcom.Api.Models; //  Your models like Watch.cs are in here
 namespace WatchEcom.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class WatchController : ControllerBase
+    //public class name_can_be anything :symbol for inheritance  ControllerBase is abstract class imported form line 1 module
+    /*
+     Ok(), BadRequest(), Unauthorized(), etc. → so you can return proper HTTP responses
+     Access to things like Request, User, ModelState
+     Model binding support (like [FromBody], [FromQuery])
+     Authentication info (User.Identity.Name, etc.)
+    */
     {
         private readonly ApplicationDbContext _context;
 
@@ -19,14 +23,14 @@ namespace WatchEcom.Api.Controllers
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        // ✅ TEST ENDPOINT - CHECK IF API WORKS
+        // TEST ENDPOINT - CHECK IF API WORKS
         [HttpGet("test")]
         public IActionResult GetTestResponse()
         {
             return Ok(new { message = "API is working!" });
         }
 
-        // ✅ GET: api/Watch (List All Watches)
+        // GET: api/Watch (List All Watches)
         [HttpGet]
         public async Task<ActionResult<IEnumerable<object>>> GetWatches()
         {
@@ -37,11 +41,11 @@ namespace WatchEcom.Api.Controllers
                 w.Model,
                 w.Price,
                 w.Description,
-                w.ImageUrl // ✅ Ensure this is included
+                w.ImageUrl 
             }).ToListAsync();
         }
 
-        // ✅ GET: api/Watch/5 (Get Watch by ID)
+        //  GET: api/Watch/5 (Get Watch by ID)
         [HttpGet("{id}")]
         public async Task<ActionResult<object>> GetWatch(int id)
         {
@@ -61,7 +65,7 @@ namespace WatchEcom.Api.Controllers
             };
         }
 
-        // ✅ POST: api/Watch (Create New Watch)
+        //  POST: api/Watch (Create New Watch)
         [HttpPost]
         [Authorize]
         public async Task<ActionResult<Watch>> PostWatch(Watch watch)
@@ -71,7 +75,7 @@ namespace WatchEcom.Api.Controllers
             return CreatedAtAction(nameof(GetWatch), new { id = watch.Id }, watch);
         }
 
-        // ✅ PUT: api/Watch/5 (Update Watch)
+        //  PUT: api/Watch/5 (Update Watch)
         [HttpPut("{id}")]
         [Authorize]
         public async Task<IActionResult> PutWatch(int id, Watch watch)
@@ -84,7 +88,7 @@ namespace WatchEcom.Api.Controllers
             return NoContent();
         }
 
-        // ✅ DELETE: api/Watch/5 (Delete Watch)
+        // DELETE: api/Watch/5 (Delete Watch)
         [HttpDelete("{id}")]
         [Authorize]
         public async Task<IActionResult> DeleteWatch(int id)

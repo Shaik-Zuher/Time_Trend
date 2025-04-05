@@ -1,3 +1,5 @@
+//Heart of database
+
 using Microsoft.EntityFrameworkCore;
 using WatchEcom.Api.Models;
 
@@ -7,12 +9,14 @@ namespace WatchEcom.Api.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
-        { }
+        { }//This is what connects mysql in connection strings in appsettings.json
 
+        //Creates tables
         public DbSet<User> Users { get; set; }
         public DbSet<Watch> Watches { get; set; }
         public DbSet<Order> Orders { get; set; }
-
+        //If no migrations folder create a migration by running dotnet ef migrations add Init
+        //Seed data-Some sort of predefined data thats why we run dotnet ef database update
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
