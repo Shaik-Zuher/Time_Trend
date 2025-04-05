@@ -16,11 +16,14 @@ You will need 2 terminals.
 
 ## 1.Clone Repositoy or Download Zip file
 
+Method 1: 
 Fork repository and download zip file
 
 OR
 
+Method 2: 
 To Clone Repository
+
 open vscode terminal, run:
 
 ```bash
@@ -75,6 +78,24 @@ dotnet ef database update
 ```bash
 dotnet tool install --global dotnet-ef
 ```
+
+Somtimes step 6 doesn't then run the following:
+
+```bash
+ls Migrations/
+```
+
+1.If migrations exist:
+
+close the vscode and once try again from step 3.
+
+2.If no migrations exist
+```bash
+dotnet ef migrations add Initial
+dotnet ef database update
+```
+
+continue to step 7
 ## 7. Run the Backend
 ```bash
 dotnet run
