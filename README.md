@@ -79,17 +79,17 @@ dotnet ef database update
 dotnet tool install --global dotnet-ef
 ```
 
-Somtimes step 6 doesn't then run the following:
+Somtimes step 6 doesn't work then run the following:
 
 ```bash
 ls Migrations/
 ```
 
-1.If migrations exist:
+1. If migrations exist:
 
 close the vscode and once try again from step 3.
 
-2.If no migrations exist
+2. If no migrations exist
 ```bash
 dotnet ef migrations add Initial
 dotnet ef database update
