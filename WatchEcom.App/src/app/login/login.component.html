@@ -40,6 +40,9 @@
         <span>{{ errorMessage }}</span>
       </div>
       <p class="forgot-password" (click)="openForgotPasswordDialog()"><a>Forgot Password?</a></p>
+      <div *ngIf="message" class="error-message">
+        <span>{{ message}}</span>
+      </div>
       <button type="submit" class="login-button">Login</button>
       <p></p>
       <div class="register-prompt">

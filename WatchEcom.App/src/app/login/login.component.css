@@ -179,6 +179,7 @@ button:hover {
   font-size: 14px;
   color: red;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .forgot-password a:hover {

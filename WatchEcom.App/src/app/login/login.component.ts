@@ -15,7 +15,7 @@ export class LoginComponent {
   username = '';
   password = '';
   errorMessage = '';
-  
+  message= '';
   emailPattern = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";  // Regex for email validation
   isPasswordReset = false; // Track if password is reset
   showForgotPasswordDialog = false; // Toggle the dialog
@@ -50,6 +50,10 @@ export class LoginComponent {
 
   // Open Forgot Password dialog
   openForgotPasswordDialog() {
+    if(this.username==""){
+      this.message="Please Enter Email";
+      return
+    }
     this.showForgotPasswordDialog = true;
     this.isForgotPasswordOpen = true;
   }
