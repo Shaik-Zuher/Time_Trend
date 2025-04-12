@@ -5,42 +5,97 @@
       <h2 class="title">Welcomes You</h2>
       <p class="subtitle">Sign in to your account</p>
     </div>
-
     <form (ngSubmit)="login()" class="login-form">
       <div class="form-field">
-        <label for="email">Email:</label>
+        <label for="username">Email:</label>
         <div class="input-container">
-          <input 
-            type="email" 
-            id="email" 
-            [(ngModel)]="username" 
-            name="username" 
-            required
-          >
+        <input
+          type="text"
+          id="username"
+          [(ngModel)]="username"
+          name="username"
+          required
+          [pattern]="emailPattern"
+          #usernameField="ngModel"
+        />
+        </div>
+        <div *ngIf="usernameField.invalid && usernameField.touched" class="error-message">
+          <p *ngIf="usernameField.errors?.['pattern']" style="color: red;">Please enter a valid email address.</p>
         </div>
       </div>
 
       <div class="form-field">
         <label for="password">Password:</label>
         <div class="input-container">
-          <input 
-            type="password" 
-            id="password" 
-            [(ngModel)]="password" 
-            name="password" 
-            required
-          >
-        </div>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
       </div>
-      <button type="submit" class="login-button">Sign In</button>
-
+      </div>
       <div *ngIf="errorMessage" class="error-message">
         <span>{{ errorMessage }}</span>
       </div>
+      <p class="forgot-password" (click)="openForgotPasswordDialog()"><a>Forgot Password?</a></p>
+      <button type="submit" class="login-button">Login</button>
+      <p></p>
+      <div class="register-prompt">
+        Don't have an account? 
+        <a class="register-link" (click)="navigateToRegister()">Sign up</a>
+      </div>
     </form>
-    <div class="register-prompt">
-      Don't have an account? 
-      <a class="register-link" (click)="navigateToRegister()">Sign up</a>
+  </div>
+
+  <div *ngIf="isForgotPasswordOpen" class="forgot-password-dialog">
+    <div class="dialog-overlay"></div>
+    <div class="dialog-content">
+      <h3 >Reset Your Password</h3>
+
+      <form *ngIf="!isPasswordReset" (ngSubmit)="verifySecurityAnswer()">
+        <label for="answer">Security question:<br>What is your favorite color?</label>
+        <div class="single">
+        <input type="text" id="answer" [(ngModel)]="answer" name="answer" required />
+        <button type="submit">Submit</button>
+        </div>
+        <div *ngIf="answerMessage" class="error-message">
+          <p>{{ answerMessage }}</p>
+      </div>
+        <button type="button" class="cancel" (click)="closeForgotPasswordDialog()">Cancel</button>
+      </form>
+
+      <!-- Password reset form (shown after correct security question answer) -->
+      <form *ngIf="isPasswordReset" (ngSubmit)="resetPassword()">
+        <label for="newPassword">New Password:</label>
+        <div class="input-container">
+        <input
+          type="password"
+          id="newPassword"
+          [(ngModel)]="newPassword"
+          name="newPassword"
+          required
+        />
+        </div>
+        <label for="confirmPassword">Confirm New Password:</label>
+        <div class="input-container">
+        <input
+          type="password"
+          id="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          required
+        />
+        </div>
+        <div *ngIf="passwordErrorMessage" class="error-message">
+          <p>{{ passwordErrorMessage }}</p>
+        </div>
+        <div class="single">
+        <button type="submit">Reset Password</button>
+        <button type="button" class="cancel" (click)="closeForgotPasswordDialog()">Cancel</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

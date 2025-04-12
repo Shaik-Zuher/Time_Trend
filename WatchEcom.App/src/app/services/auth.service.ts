@@ -74,5 +74,26 @@ export class AuthService {
     localStorage.removeItem('token'); //  Remove token
     localStorage.removeItem('loggedInUser'); //  Remove user session
   }
-  
+  verifySecurityAnswer(username: string, answer: string): Observable<any> {
+    return this.http
+      .post<any>(`${this.apiUrl}/verify-security-answer`, { username, answer })
+      .pipe(
+        catchError((error) => {
+          console.error('Verification failed:', error);
+          return throwError(() => new Error('Verification failed.'));
+        })
+      );
+  }
+
+  // Method to reset the password
+  resetPassword(username: string, newPassword: string): Observable<any> {
+    return this.http
+      .post<any>(`${this.apiUrl}/reset-password`, { username, newPassword })
+      .pipe(
+        catchError((error) => {
+          console.error('Password reset failed:', error);
+          return throwError(() => new Error('Password reset failed.'));
+        })
+      );
+  }
 }
