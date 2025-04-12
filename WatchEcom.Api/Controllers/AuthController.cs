@@ -66,7 +66,7 @@ namespace WatchEcom.Api.Controllers
             }
 
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-
+            user.Security_Question=BCrypt.Net.BCrypt.HashPassword(user.Security_Question);
             _context.Users.Add(user);
             _context.SaveChanges();
 

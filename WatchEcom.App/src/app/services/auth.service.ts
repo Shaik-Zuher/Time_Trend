@@ -27,15 +27,15 @@ export class AuthService {
   }
 
   //  REGISTER - Send user credentials to backend
-  register(username: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register`, { username, password }).pipe(
+  register(username: string, password: string, Security_Question: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, { username, password, Security_Question }).pipe(
       catchError((error) => {
         console.error('Registration failed:', error);
         return throwError(() => new Error('Registration failed. Please try again.'));
       })
     );
   }
-
+  
   //  Store Token Securely
   public setToken(token: string) {
     if (typeof window !== 'undefined' && localStorage) {

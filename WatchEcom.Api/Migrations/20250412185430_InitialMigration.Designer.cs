@@ -12,8 +12,8 @@ using WatchEcom.Api.Data;
 namespace WatchEcom.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250403124801_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250412185430_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,6 +53,10 @@ namespace WatchEcom.Api.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Security_Question")
                         .IsRequired()
                         .HasColumnType("longtext");
 

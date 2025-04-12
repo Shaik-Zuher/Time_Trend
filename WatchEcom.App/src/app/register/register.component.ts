@@ -14,13 +14,37 @@ import { FormsModule } from '@angular/forms';
 export class RegisterComponent {
   username = '';
   password = '';
+  confirm_password='';
+  Security_Question = '';
   message = '';
+  passwordMismatch = false;
 
-  // Changed router from private → public
-  constructor(private authService: AuthService, public router: Router) {}//How it is connected to register.service.ts
+  emailPattern: string = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'; // Email regex pattern
+  constructor(private authService: AuthService, public router: Router) {}
 
+  isValidEmail(): boolean {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(this.username);
+  }
+  validatePasswords(): boolean {
+    if (this.password !== this.confirm_password) {
+      this.passwordMismatch = true;  // Show the error message
+      return false;
+    }
+    this.passwordMismatch = false;  // Hide the error message if passwords match
+    return true;
+  }
   register() {
-    this.authService.register(this.username, this.password).subscribe({
+    if (!this.validatePasswords()) {
+      this.message = 'Passwords do not match!';
+      return;
+    }
+    if (!this.isValidEmail()) {
+      this.message = 'Please enter a valid email address.';
+      return;
+    }
+
+    this.authService.register(this.username, this.password, this.Security_Question).subscribe({
       next: () => {
         this.message = 'Registration successful! Redirecting to login...';
         setTimeout(() => {
