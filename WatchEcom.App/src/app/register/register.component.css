@@ -1,81 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-/* Full-screen centering */
-.container {
-  background-image: url("../../assets/Loginwallpaper.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f3f4f6; /* Light gray background */
-  margin:-8px;
+* {
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
+  font-family: 'Inter', sans-serif;
 }
-span{
-  color:red;
-}
-/* Ensures form box is centered properly */
-.form-box {
-  background: white;
-  padding: 30px;
-  width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+
+body {
+  background: linear-gradient(to right, #dfe9f3, #ffffff);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
-/* Headline */
-.form-box h2 {
-  margin-bottom: 20px;
+/* ✅ Center the form container */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* ✅ Form Box Styling */
+.form-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #222;
   font-size: 24px;
-  color: #333;
 }
 
-/* Labels */
-.form-box label {
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
   display: block;
-  text-align: left;
-  font-weight: 500;
-  width: 100%;
-  color: #444;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
 }
 
-/* Input fields */
-.form-box input {
+input[type="text"],
+input[type="password"],
+input[type="email"] {
   width: 100%;
-  padding: 10px;
+  padding: 12px 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  background: #f9f9f9;
-  margin-bottom: 10px;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: 0.3s;
+  background-color: #f9f9f9;
 }
 
-/* Submit button */
-.form-box button {
+input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+button {
   width: 100%;
-  padding: 10px;
-  background: #000;
-  color: white;
-  font-size: 16px;
+  padding: 14px;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   cursor: pointer;
-  margin-top: 15px;
-  transition:0.3s ease;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
-.form-box button:hover {
-  background: #333; /* Darker gray for effect */
-  transform: scale(1.05); /* Slight zoom effect */
+button:hover:not(:disabled) {
+  background-color: #0056b3;
 }
 
-body::after {
-  content: "Zuher. All rights reserved.";
-  display: none;
+button:disabled {
+  background-color: #b5b5b5;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d90429;
+  font-size: 13px;
+  margin-top: 6px;
+  animation: fadeIn 0.3s ease;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: #e63946;
+  background: #ffe6e6;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 480px) {
+  .form-box {
+    padding: 30px 20px;
+  }
 }
