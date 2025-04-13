@@ -1,19 +1,55 @@
 <div class="container">
   <div class="form-box">
     <h2>Register</h2>
-    <form (ngSubmit)="register()">
-      <label for="username">Email:</label>
-      <input type="text" id="username" [(ngModel)]="username" name="username" required [pattern]="emailPattern" #usernameField="ngModel"  />
-
-      <div *ngIf="usernameField.invalid && usernameField.touched">
-        <p style="color: red;">Please enter a valid email address (e.g., user&#64;gmail.com).</p>
+    <form (ngSubmit)="register()" novalidate>
+      <div class="form-group">
+        <label for="username">Email</label>
+        <input
+          type="email"
+          id="username"
+          [(ngModel)]="username"
+          name="username"
+          required
+          [pattern]="emailPattern"
+          #usernameField="ngModel"
+        />
+        <p class="error" *ngIf="usernameField.invalid && usernameField.touched">
+          Please enter a valid email address (e.g., user&#64;gmail.com).
+        </p>
       </div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" [(ngModel)]="password" name="password" required />
-      <label for="cp">Confirm Password:</label>
-      <input type="password" id="cp" [(ngModel)]="confirm_password" name="confirm_password" required/>
-      <label for="Security_Question">Security Question: What is your Favorite Color?</label>
-      <input type="text" id="Security_Question" [(ngModel)]="Security_Question" name="Security_Question" required />
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="cp">Confirm Password</label>
+        <input
+          type="password"
+          id="cp"
+          [(ngModel)]="confirm_password"
+          name="confirm_password"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Security_Question">Security Question: What is your Favorite Color?</label>
+        <input
+          type="text"
+          id="Security_Question"
+          [(ngModel)]="Security_Question"
+          name="Security_Question"
+          required
+        />
+      </div>
 
       <div *ngIf="message" class="error-message">
         <span>{{ message }}</span>
