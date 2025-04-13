@@ -1,34 +1,72 @@
 <header class="header">
-  <a  class="header-logo">Time Trend</a>
-  <nav class="nav" id="nav-menu">
+  <div class="header-container">
+    <a class="header-logo">TIME TREND</a>
+    <nav class="nav" id="nav-menu">
       <div class="nav-content bd-grid">
-          <span class="nav-name">Time Trend</span>
-          <div class="nav-menu">
-              <ul class="nav-list">
-                  <li class="nav-item"><a class="nav-link active">Home</a></li>
-                  <li class="nav-item" (click)="viewCart()"><a class="nav-link ">My Cart</a></li>
-                  <li class="nav-item" (click)="Logout()"><a href="#" class="nav-link ">Logout</a></li>
-              </ul>
-          </div>
+        <span class="nav-name">Time Trend</span>
+        <div class="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link active">Home</a></li>
+            <li class="nav-item" (click)="viewCart()">
+              <a class="nav-link cart-link">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count">{{ cart.length }}</span>
+              </a>
+            </li>
+            <li class="nav-item" (click)="Logout()"><a class="nav-link">Logout</a></li>
+          </ul>
+        </div>
       </div>
-  </nav>
+    </nav>
+  </div>
 </header>
+
 <div class="watch-container">
-  <h2>Watches</h2>
-  <div class="watch-grid">
-    <div *ngFor="let watch of watches" class="watch-card">
-      <img [src]="watch.imageUrl" alt="{{ watch.brand }}" class="watch-image" />
-      <h3>{{ watch.brand }}</h3>
-      <p>{{ watch.description }}</p>
-      <p>Price: {{ watch.price | currency }}</p>
-      <button (click)="addToCart(watch)">🛒 Add to Cart</button>
+  <div class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">TIMELESS PRECISION</h1>
+      <p class="hero-subtitle">Craftsmanship meets innovation in every timepiece</p>
     </div>
   </div>
-<br>
-  <div class="cart-section">
-  <button (click)="viewCart()" class="view-cart-button">
-    🛒 View Cart ({{ cart.length }})
-  </button>
-</div>
-  
+
+  <div class="collection-header">
+    <h2 class="collection-title">OUR SIGNATURE COLLECTION</h2>
+    <div class="collection-filter">
+      <select class="filter-select">
+        <option>All Collections</option>
+        <option>Luxury Series</option>
+        <option>Sports Edition</option>
+        <option>Classic Designs</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="watch-grid">
+    <div *ngFor="let watch of watches" class="watch-card">
+      <div class="watch-badge" *ngIf="watch.discount">-{{ watch.discount }}%</div>
+      <div class="watch-image-container">
+        <img [src]="watch.imageUrl" alt="{{ watch.brand }}" class="watch-image" />
+      </div>
+      <div class="watch-details">
+        <h3 class="watch-brand">{{ watch.brand }}</h3>
+        <p class="watch-model">{{ watch.model }}</p>
+        <p class="watch-description">{{ watch.description }}</p>
+        <div class="watch-price">
+          <span class="current-price">{{ watch.price | currency }}</span>
+          <span class="original-price" *ngIf="watch.originalPrice">{{ watch.originalPrice | currency }}</span>
+        </div>
+        <button class="add-to-cart" (click)="addToCart(watch)">
+          <span>Add to Collection</span>
+          <span class="cart-icon">+</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="view-cart-container">
+    <button (click)="viewCart()" class="view-cart-button">
+      View Your Collection ({{ cart.length }})
+    </button>
+  </div>
 </div>
