@@ -100,7 +100,10 @@ button:disabled {
   margin-top: 6px;
   animation: fadeIn 0.3s ease;
 }
-
+body::after {
+  content: "Zuher. All rights reserved.";
+  display: none;
+}
 .error-message {
   margin-top: 10px;
   color: #e63946;

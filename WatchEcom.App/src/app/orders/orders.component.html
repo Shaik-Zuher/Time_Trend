@@ -1,25 +1,28 @@
 <header class="header">
-  <nav class="nav" id="nav-menu">
-      <div class="nav-content bd-grid">
-          <span class="nav-name">Time Trend</span>
-      </div>
-  </nav>
+  <div class="header-container">
+    <a class="header-logo">TIME TREND</a>
+    <nav class="nav" id="nav-menu">
+      <!--buttons to be added-->
+    </nav>
+  </div>
 </header>
 <div class="orders-container">
   <h2>Your Orders</h2>
-
   <div *ngIf="orders.length > 0; else noOrders">
     <div *ngFor="let order of orders" class="order-card">
-      <img [src]="order.imageUrl" alt="{{ order.brand }}" class="order-image" />
-      <h3>{{ order.brand }}</h3>
-      <p>{{ order.description }}</p>
-      <p>Price: {{ order.price | currency }}</p>
+      <div class="img-container">
+        <img [src]="order.imageUrl" alt="{{ order.brand }}" class="order-image" />
+      </div>
+      <div class="details">
+        <h3>{{ order.brand }}</h3>
+        <p>{{ order.description }}</p>
+        <p>Price: {{ order.price | currency }}</p>
+      </div>
     </div>
     <br>
     <button (click)="clearOrders()">Clear Orders</button>
-  </div>
-
+    </div>
   <ng-template #noOrders>
-    <p>No orders found.</p>
+    <p class="matter">No orders found.</p>
   </ng-template>
 </div>
