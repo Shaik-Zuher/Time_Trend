@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\WatchEcom.Api.csproj": {}
+    "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\WatchEcom.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\WatchEcom.Api.csproj": {
+    "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\WatchEcom.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\WatchEcom.Api.csproj",
+        "projectUniqueName": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\WatchEcom.Api.csproj",
         "projectName": "WatchEcom.Api",
-        "projectPath": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\WatchEcom.Api.csproj",
+        "projectPath": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\WatchEcom.Api.csproj",
         "packagesPath": "C:\\Users\\zuher\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\obj\\",
+        "outputPath": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\zuher\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -97,7 +97,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.407/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

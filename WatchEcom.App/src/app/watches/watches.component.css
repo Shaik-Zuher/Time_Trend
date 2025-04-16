@@ -170,22 +170,29 @@
   color: var(--white-color);
   margin-bottom: 2rem;
 }
-
-/* Collection Header */
-.collection-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 0 1rem;
+.body-part {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
-
+.filter-sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/* Collection Header */
 .collection-title {
   font-family: var(--title-font);
   font-size: 2rem;
   color: var(--gold-color);
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
-  position: relative;
-  display: inline-block;
+  text-align: center;
 }
 
 .collection-title::after {
@@ -214,14 +221,15 @@
   padding-top: 80px;
   background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
 }
-
+.watch-grid-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 .watch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 0 2rem;
-  max-width: 1400px;
-  margin: 0 auto 3rem;
 }
 
 /* Watch Card */
@@ -392,7 +400,14 @@
   .collection-title {
     font-size: 1.8rem;
   }
+  .body-part {
+    flex-direction: column;
+  }
 
+  .filter-sidebar {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
   .watch-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     padding: 0 1rem;

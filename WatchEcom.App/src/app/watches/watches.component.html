@@ -29,44 +29,47 @@
       <p class="hero-subtitle">Craftsmanship meets innovation in every timepiece</p>
     </div>
   </div>
-
-  <div class="collection-header">
-    <h2 class="collection-title">OUR SIGNATURE COLLECTION</h2>
-    <div class="collection-filter">
+  <h2 class="collection-title">OUR SIGNATURE COLLECTION</h2>
+  <div class="body-part">
+    <!--Body part-->
+    <div class="filter-sidebar">
       <select class="filter-select">
         <option>All Collections</option>
         <option>Luxury Series</option>
         <option>Sports Edition</option>
         <option>Classic Designs</option>
       </select>
+      <!-- You can add more filters here later like price range, color, etc. -->
     </div>
-  </div>
-
-  <div class="watch-grid">
-    <div *ngFor="let watch of watches" class="watch-card">
-      <div class="watch-badge" *ngIf="watch.discount">-{{ watch.discount }}%</div>
-      <div class="watch-image-container">
-        <img [src]="watch.imageUrl" alt="{{ watch.brand }}" class="watch-image" />
-      </div>
-      <div class="watch-details">
-        <h3 class="watch-brand">{{ watch.brand }}</h3>
-        <p class="watch-model">{{ watch.model }}</p>
-        <p class="watch-description">{{ watch.description }}</p>
-        <div class="watch-price">
-          <span class="current-price">{{ watch.price | currency }}</span>
-          <span class="original-price" *ngIf="watch.originalPrice">{{ watch.originalPrice | currency }}</span>
+    <!--Watch part-->
+    <div class="watch-grid-container">
+      <div class="watch-grid">
+        <div *ngFor="let watch of watches" class="watch-card">
+          <div class="watch-badge" *ngIf="watch.discount">-{{ watch.discount }}%</div>
+          <div class="watch-image-container">
+            <img [src]="watch.imageUrl" alt="{{ watch.brand }}" class="watch-image" />
+          </div>
+          <div class="watch-details">
+            <h3 class="watch-brand">{{ watch.brand }}</h3>
+            <p class="watch-model">{{ watch.model }}</p>
+            <p class="watch-description">{{ watch.description }}</p>
+            <div class="watch-price">
+              <span class="current-price">{{ watch.price | currency }}</span>
+              <span class="original-price" *ngIf="watch.originalPrice">{{ watch.originalPrice | currency }}</span>
+            </div>
+            <button class="add-to-cart" (click)="addToCart(watch)">
+              <span>Add to Collection</span>
+              <span class="cart-icon">+</span>
+            </button>
+          </div>
         </div>
-        <button class="add-to-cart" (click)="addToCart(watch)">
-          <span>Add to Collection</span>
-          <span class="cart-icon">+</span>
+      </div>
+
+      <div class="view-cart-container">
+        <button (click)="viewCart()" class="view-cart-button">
+          View Your Collection ({{ cart.length }})
         </button>
       </div>
+      </div>
     </div>
-  </div>
-
-  <div class="view-cart-container">
-    <button (click)="viewCart()" class="view-cart-button">
-      View Your Collection ({{ cart.length }})
-    </button>
-  </div>
 </div>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KGooJ/6/Y7gC7/W4DfHg+FHtwbUaYWdHsRhqaXxW+FM=",
+  "Hash": "Fo+B47ugOmsq5H14lbbuMNr1nvvcA/JBNKEe8xU/bLc=",
   "Source": "WatchEcom.Api",
   "BasePath": "_content/WatchEcom.Api",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WatchEcom.Api\\wwwroot",
       "Source": "WatchEcom.Api",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\1.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\1.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/1.jpg",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\1.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\10.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\10.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/10.jpg",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\10.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\2.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\2.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/2.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\2.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\3.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\3.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/3.jpg",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\3.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\4.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\4.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/4.jpg",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\4.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\5.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\5.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/5.jpg",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\5.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\6.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\6.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/6.jpg",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\6.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\7.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\7.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/7.jpg",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\7.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\8.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\8.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/8.jpg",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\images\\watches\\8.jpg"
     },
     {
-      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\images\\watches\\9.jpg",
+      "Identity": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\images\\watches\\9.jpg",
       "SourceId": "WatchEcom.Api",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\wwwroot\\",
       "BasePath": "_content/WatchEcom.Api",
       "RelativePath": "images/watches/9.jpg",
       "AssetKind": "All",
