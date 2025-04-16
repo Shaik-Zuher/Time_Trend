@@ -6,6 +6,7 @@
   --dark-bg: #1A1A1A;
   --darker-bg: #121212;
   --card-bg: #242424;
+  --watch-bg: #3A3A3A;
   --text-light: #E0E0E0;
   --text-dark: #333333;
   --body-font: 'Open Sans', sans-serif;
@@ -202,7 +203,14 @@
 .form-group {
   margin-bottom: 1rem;
 }
+.filters-container {
+  display: flex;
+  flex-direction: column;  /* Allow vertical stacking */
+  height: 100%;            /* Take full height of the parent container */
+}
 .filter-sidebar {
+  max-height: 80vh;  /* Ensure the sidebar doesn't exceed 80% of the viewport height */
+  overflow-y: auto;
   width: 300px;
   flex-shrink: 0;
   background-color: var(--white-color);
@@ -235,7 +243,7 @@
 }
 .filter-sidebar input[type="text"]:focus, .filter-sidebar select:focus {
   outline: none;
-  border-color: var(--primary-color);
+  border-color: var(--darker-bg);
 }
 
 .filter-sidebar input[type="range"] {
@@ -292,8 +300,11 @@
 }
 .watch-grid {
   display: grid;
+  background-color: var(--watch-bg);
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 15px;
   gap: 2rem;
+  border-radius: 5px;
 }
 .no-results {
   text-align: center;
@@ -484,7 +495,7 @@
   }
   .watch-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    padding: 0 1rem;
+    padding: 10px 1rem;
   }
 
   .nav-list {

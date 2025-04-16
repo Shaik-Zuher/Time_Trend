@@ -32,41 +32,44 @@
   <h2 class="collection-title">OUR SIGNATURE COLLECTION</h2>
   <div class="body-part">
     <!--Body part-->
-    <div class="filter-sidebar">
-      <!-- Search Bar -->
-      <label for="search-watches">Search watches:</label>
-      <input type="text" id="search-watches" class="filter-search" placeholder="Search by brand, model, or description"
-        [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()"/>
-      
-      <!-- Category Dropdown -->
-      <label for="category">Category:</label>
-      <select id="category" class="filter-select" [(ngModel)]="selectedCategory" (change)="applyFilters()">
-        <option value="">All Collections</option>
-        <option value="Luxury Series">Luxury Series</option>
-        <option value="Sports Edition">Sports Edition</option>
-        <option value="Classic Designs">Classic Designs</option>
-      </select>
+    <div class="filters-container">
+      <div class="filter-sidebar">
+        <!-- Search Bar -->
+        <label for="search-watches">Search watches:</label>
+        <input type="text" id="search-watches" class="filter-search" placeholder="Search by brand, model, or description"
+          [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()" />
     
-      <!-- Brand Dropdown -->
-      <label for="brand">Brand:</label>
-      <select id="brand" class="filter-select" [(ngModel)]="selectedBrand" (change)="applyFilters()">
-        <option value="">All Brands</option>
-        <option value="Rolex">Rolex</option>
-        <option value="Omega">Omega</option>
-        <option value="Casio">Casio</option>
-        <option value="Tag Heuer">Tag Heuer</option>
-      </select>
+        <!-- Category Dropdown -->
+        <label for="category">Category:</label>
+        <select id="category" class="filter-select" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+          <option value="">All Collections</option>
+          <option value="Luxury Series">Luxury Series</option>
+          <option value="Sports Edition">Sports Edition</option>
+          <option value="Classic Designs">Classic Designs</option>
+        </select>
     
-      <!-- Price Range -->
-      <label for="price-range">Price Range:</label>
-      <div class="price-range-container">
-        <input type="range" id="price-range" min="0" max="20000" [(ngModel)]="selectedPriceRange" (ngModelChange)="applyFilters()">
-        <span>{{ selectedPriceRange | currency }}</span>
+        <!-- Brand Dropdown -->
+        <label for="brand">Brand:</label>
+        <select id="brand" class="filter-select" [(ngModel)]="selectedBrand" (change)="applyFilters()">
+          <option value="">All Brands</option>
+          <option value="Rolex">Rolex</option>
+          <option value="Omega">Omega</option>
+          <option value="Casio">Casio</option>
+          <option value="Tag Heuer">Tag Heuer</option>
+        </select>
+    
+        <!-- Price Range -->
+        <label for="price-range">Price Range:</label>
+        <div class="price-range-container">
+          <input type="range" id="price-range" min="0" max="20000" [(ngModel)]="selectedPriceRange" (ngModelChange)="applyFilters()">
+          <span>{{ selectedPriceRange | currency }}</span>
+        </div>
+    
+        <!-- Clear Filters Button -->
+        <button class="clear-filters-btn" (click)="clearFilters()">Clear Filters</button>
       </div>
-    
-      <!-- Clear Filters Button -->
-      <button class="clear-filters-btn" (click)="clearFilters()">Clear Filters</button>
     </div>
+    
     
     <!--Watch part-->
     <div class="watch-grid-container">
