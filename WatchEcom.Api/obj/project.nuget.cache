@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DX7mHOINpac=",
+  "dgSpecHash": "bb1B7NMZGkg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.APi\\WatchEcom.Api.csproj",
+  "projectFilePath": "C:\\Users\\zuher\\Desktop\\Exp\\WatchEcom.Api\\WatchEcom.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zuher\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\zuher\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

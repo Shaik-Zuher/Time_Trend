@@ -33,18 +33,45 @@
   <div class="body-part">
     <!--Body part-->
     <div class="filter-sidebar">
-      <select class="filter-select">
-        <option>All Collections</option>
-        <option>Luxury Series</option>
-        <option>Sports Edition</option>
-        <option>Classic Designs</option>
+      <!-- Search Bar -->
+      <label for="search-watches">Search watches:</label>
+      <input type="text" id="search-watches" class="filter-search" placeholder="Search by brand, model, or description"
+        [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()"/>
+      
+      <!-- Category Dropdown -->
+      <label for="category">Category:</label>
+      <select id="category" class="filter-select" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+        <option value="">All Collections</option>
+        <option value="Luxury Series">Luxury Series</option>
+        <option value="Sports Edition">Sports Edition</option>
+        <option value="Classic Designs">Classic Designs</option>
       </select>
-      <!-- You can add more filters here later like price range, color, etc. -->
+    
+      <!-- Brand Dropdown -->
+      <label for="brand">Brand:</label>
+      <select id="brand" class="filter-select" [(ngModel)]="selectedBrand" (change)="applyFilters()">
+        <option value="">All Brands</option>
+        <option value="Rolex">Rolex</option>
+        <option value="Omega">Omega</option>
+        <option value="Casio">Casio</option>
+        <option value="Tag Heuer">Tag Heuer</option>
+      </select>
+    
+      <!-- Price Range -->
+      <label for="price-range">Price Range:</label>
+      <div class="price-range-container">
+        <input type="range" id="price-range" min="0" max="20000" [(ngModel)]="selectedPriceRange" (ngModelChange)="applyFilters()">
+        <span>{{ selectedPriceRange | currency }}</span>
+      </div>
+    
+      <!-- Clear Filters Button -->
+      <button class="clear-filters-btn" (click)="clearFilters()">Clear Filters</button>
     </div>
+    
     <!--Watch part-->
     <div class="watch-grid-container">
       <div class="watch-grid">
-        <div *ngFor="let watch of watches" class="watch-card">
+          <div *ngFor="let watch of filteredWatches" class="watch-card">
           <div class="watch-badge" *ngIf="watch.discount">-{{ watch.discount }}%</div>
           <div class="watch-image-container">
             <img [src]="watch.imageUrl" alt="{{ watch.brand }}" class="watch-image" />
@@ -63,6 +90,9 @@
             </button>
           </div>
         </div>
+        <div *ngIf="filteredWatches.length === 0" class="no-results">
+          No watches found.
+        </div>        
       </div>
 
       <div class="view-cart-container">

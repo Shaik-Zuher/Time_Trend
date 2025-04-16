@@ -177,14 +177,7 @@
   max-width: 1400px;
   margin: 0 auto;
 }
-.filter-sidebar {
-  width: 250px;
-  flex-shrink: 0;
-  background-color: var(--card-bg);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+
 /* Collection Header */
 .collection-title {
   font-family: var(--title-font);
@@ -193,6 +186,7 @@
   letter-spacing: 2px;
   margin-bottom: 1.5rem;
   text-align: center;
+  position: relative;
 }
 
 .collection-title::after {
@@ -205,15 +199,85 @@
   height: 2px;
   background-color: var(--gold-color);
 }
+.form-group {
+  margin-bottom: 1rem;
+}
+.filter-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background-color: var(--white-color);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-.filter-select {
-  background-color: var(--card-bg);
-  color: var(--text-light);
+.filter-sidebar label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  display: block;
+}
+
+.filter-sidebar input[type="text"], .filter-sidebar select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
   border: 1px solid var(--gold-color);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-family: var(--body-font);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--white-color);
+  color: var(--dark-color);
+  transition: border-color 0.3s;
+}
+.filter-search::placeholder{
+  color: var(--white-color);
+  opacity: 0;
+}
+.filter-sidebar input[type="text"]:focus, .filter-sidebar select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.filter-sidebar input[type="range"] {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.filter-sidebar .price-range-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-sidebar span {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+.filter-sidebar .clear-filters-btn {
+  padding: 0.7rem 1.2rem;
+  background-color: var(--gold-color);
+  color: var(--dark-bg);
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.filter-sidebar .clear-filters-btn:hover {
+  background-color: var(--light-gold);
+  color: var(--dark-bg);
+  }
+
+.filter-sidebar select:hover, .filter-sidebar input[type="text"]:hover {
+  border-color: var(--primary-dark);
+}
+
+.filter-sidebar input[type="range"]:focus {
+  outline: none;
 }
 
 /* Watch Grid */
@@ -230,6 +294,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+}
+.no-results {
+  text-align: center;
+  color: var(--text-light);
+  margin-top: 2rem;
+  font-size: 1.2rem;
 }
 
 /* Watch Card */
@@ -407,6 +477,10 @@
   .filter-sidebar {
     width: 100%;
     margin-bottom: 2rem;
+  }
+  .filter-search::placeholder{
+    color: var(--dark-color);
+    opacity: 1;
   }
   .watch-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WatchEcom.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -66,6 +66,8 @@ namespace WatchEcom.Api.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ImageUrl = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    Category = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     OrderId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -81,19 +83,19 @@ namespace WatchEcom.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Watches",
-                columns: new[] { "Id", "Brand", "Description", "ImageUrl", "Model", "OrderId", "Price" },
+                columns: new[] { "Id", "Brand", "Category", "Description", "ImageUrl", "Model", "OrderId", "Price" },
                 values: new object[,]
                 {
-                    { 1, "Rolex", "Luxury diving watch with stainless steel case", "/images/watches/1.jpg", "Submariner", null, 12000m },
-                    { 2, "Casio", "Durable sports watch with shock resistance", "/images/watches/2.jpg", "G-Shock", null, 150m },
-                    { 3, "Omega", "Moonwatch with chronograph functionality", "/images/watches/3.jpg", "Speedmaster", null, 5000m },
-                    { 4, "Tag Heuer", "Professional diving watch with water resistance", "/images/watches/4.jpg", "Aquaracer", null, 2200m },
-                    { 5, "IWC", "Aviation-inspired watch with sleek design", "/images/watches/5.jpg", "Pilot Mark XVIII", null, 4500m },
-                    { 6, "Cartier", "Classic luxury watch with square case design", "/images/watches/6.jpg", "Santos", null, 7500m },
-                    { 7, "Omega", "Diving watch with ceramic bezel", "/images/watches/7.jpg", "Seamaster", null, 4000m },
-                    { 8, "Rolex", "Adventure-ready watch with high durability", "/images/watches/8.jpg", "Explorer", null, 10500m },
-                    { 9, "Tissot", "Affordable luxury watch with integrated bracelet", "/images/watches/9.jpg", "Tissot PRX", null, 700m },
-                    { 10, "Breitling", "Pilot watch with slide rule bezel", "/images/watches/10.jpg", "Navitimer", null, 6000m }
+                    { 1, "Rolex", "Luxury Series", "Luxury diving watch with stainless steel case", "/images/watches/1.jpg", "Submariner", null, 12000m },
+                    { 2, "Casio", "Sports Edition", "Durable sports watch with shock resistance", "/images/watches/2.jpg", "G-Shock", null, 150m },
+                    { 3, "Omega", "Luxury Series", "Moonwatch with chronograph functionality", "/images/watches/3.jpg", "Speedmaster", null, 5000m },
+                    { 4, "Tag Heuer", "Luxury Series", "Professional diving watch with water resistance", "/images/watches/4.jpg", "Aquaracer", null, 2200m },
+                    { 5, "IWC", "Classic Designs", "Aviation-inspired watch with sleek design", "/images/watches/5.jpg", "Pilot Mark XVIII", null, 4500m },
+                    { 6, "Cartier", "Luxury Series", "Classic luxury watch with square case design", "/images/watches/6.jpg", "Santos", null, 7500m },
+                    { 7, "Omega", "Sports Edition", "Diving watch with ceramic bezel", "/images/watches/7.jpg", "Seamaster", null, 4000m },
+                    { 8, "Rolex", "Luxury Series", "Adventure-ready watch with high durability", "/images/watches/8.jpg", "Explorer", null, 10500m },
+                    { 9, "Tissot", "Classic Designs", "Affordable luxury watch with integrated bracelet", "/images/watches/9.jpg", "Tissot PRX", null, 700m },
+                    { 10, "Breitling", "Classic Designs", "Pilot watch with slide rule bezel", "/images/watches/10.jpg", "Navitimer", null, 6000m }
                 });
 
             migrationBuilder.CreateIndex(

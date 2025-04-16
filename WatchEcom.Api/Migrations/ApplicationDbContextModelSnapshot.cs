@@ -17,7 +17,7 @@ namespace WatchEcom.Api.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.14")
+                .HasAnnotation("ProductVersion", "8.0.15")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -78,6 +78,10 @@ namespace WatchEcom.Api.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -107,6 +111,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 1,
                             Brand = "Rolex",
+                            Category = "Luxury Series",
                             Description = "Luxury diving watch with stainless steel case",
                             ImageUrl = "/images/watches/1.jpg",
                             Model = "Submariner",
@@ -116,6 +121,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 2,
                             Brand = "Casio",
+                            Category = "Sports Edition",
                             Description = "Durable sports watch with shock resistance",
                             ImageUrl = "/images/watches/2.jpg",
                             Model = "G-Shock",
@@ -125,6 +131,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 3,
                             Brand = "Omega",
+                            Category = "Luxury Series",
                             Description = "Moonwatch with chronograph functionality",
                             ImageUrl = "/images/watches/3.jpg",
                             Model = "Speedmaster",
@@ -134,6 +141,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 4,
                             Brand = "Tag Heuer",
+                            Category = "Luxury Series",
                             Description = "Professional diving watch with water resistance",
                             ImageUrl = "/images/watches/4.jpg",
                             Model = "Aquaracer",
@@ -143,6 +151,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 5,
                             Brand = "IWC",
+                            Category = "Classic Designs",
                             Description = "Aviation-inspired watch with sleek design",
                             ImageUrl = "/images/watches/5.jpg",
                             Model = "Pilot Mark XVIII",
@@ -152,6 +161,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 6,
                             Brand = "Cartier",
+                            Category = "Luxury Series",
                             Description = "Classic luxury watch with square case design",
                             ImageUrl = "/images/watches/6.jpg",
                             Model = "Santos",
@@ -161,6 +171,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 7,
                             Brand = "Omega",
+                            Category = "Sports Edition",
                             Description = "Diving watch with ceramic bezel",
                             ImageUrl = "/images/watches/7.jpg",
                             Model = "Seamaster",
@@ -170,6 +181,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 8,
                             Brand = "Rolex",
+                            Category = "Luxury Series",
                             Description = "Adventure-ready watch with high durability",
                             ImageUrl = "/images/watches/8.jpg",
                             Model = "Explorer",
@@ -179,6 +191,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 9,
                             Brand = "Tissot",
+                            Category = "Classic Designs",
                             Description = "Affordable luxury watch with integrated bracelet",
                             ImageUrl = "/images/watches/9.jpg",
                             Model = "Tissot PRX",
@@ -188,6 +201,7 @@ namespace WatchEcom.Api.Migrations
                         {
                             Id = 10,
                             Brand = "Breitling",
+                            Category = "Classic Designs",
                             Description = "Pilot watch with slide rule bezel",
                             ImageUrl = "/images/watches/10.jpg",
                             Model = "Navitimer",

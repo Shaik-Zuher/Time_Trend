@@ -1,14 +1,15 @@
-using Microsoft.AspNetCore.Mvc;//conatins ControllerBase class
-using Microsoft.AspNetCore.Authorization; //  Lets you use [Authorize] for securing endpoints with JWT
-using Microsoft.EntityFrameworkCore; //  Allows interaction with the database using Entity Framework
-using WatchEcom.Api.Data; //  This is your own project’s data layer (contains ApplicationDbContext)
-using WatchEcom.Api.Models; //  Your models like Watch.cs are in here
+using Microsoft.AspNetCore.Mvc; // contains ControllerBase class
+using Microsoft.AspNetCore.Authorization; // Lets you use [Authorize] for securing endpoints with JWT
+using Microsoft.EntityFrameworkCore; // Allows interaction with the database using Entity Framework
+using WatchEcom.Api.Data; // This is your own project’s data layer (contains ApplicationDbContext)
+using WatchEcom.Api.Models; // Your models like Watch.cs are in here
+
 namespace WatchEcom.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class WatchController : ControllerBase
-    //public class name_can_be anything :symbol for inheritance  ControllerBase is abstract class imported form line 1 module
+    // public class name_can_be anything :symbol for inheritance ControllerBase is abstract class imported from line 1 module
     /*
      Ok(), BadRequest(), Unauthorized(), etc. → so you can return proper HTTP responses
      Access to things like Request, User, ModelState
@@ -34,6 +35,7 @@ namespace WatchEcom.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<object>>> GetWatches()
         {
+            // Now, the category field is included in the response
             return await _context.Watches.Select(w => new
             {
                 w.Id,
@@ -41,7 +43,8 @@ namespace WatchEcom.Api.Controllers
                 w.Model,
                 w.Price,
                 w.Description,
-                w.ImageUrl 
+                w.ImageUrl,
+                w.Category // Adding category to the select statement
             }).ToListAsync();
         }
 
@@ -54,6 +57,7 @@ namespace WatchEcom.Api.Controllers
             {
                 return NotFound();
             }
+
             return new
             {
                 watch.Id,
@@ -61,13 +65,14 @@ namespace WatchEcom.Api.Controllers
                 watch.Model,
                 watch.Price,
                 watch.Description,
-                watch.ImageUrl
+                watch.ImageUrl,
+                watch.Category // Returning category along with other watch details
             };
         }
 
         //  POST: api/Watch (Create New Watch)
         [HttpPost]
-        [Authorize]
+        [Authorize] // Authorization attribute to secure this endpoint
         public async Task<ActionResult<Watch>> PostWatch(Watch watch)
         {
             _context.Watches.Add(watch);
@@ -77,7 +82,7 @@ namespace WatchEcom.Api.Controllers
 
         //  PUT: api/Watch/5 (Update Watch)
         [HttpPut("{id}")]
-        [Authorize]
+        [Authorize] // Authorization attribute to secure this endpoint
         public async Task<IActionResult> PutWatch(int id, Watch watch)
         {
             if (id != watch.Id)
@@ -90,7 +95,7 @@ namespace WatchEcom.Api.Controllers
 
         // DELETE: api/Watch/5 (Delete Watch)
         [HttpDelete("{id}")]
-        [Authorize]
+        [Authorize] // Authorization attribute to secure this endpoint
         public async Task<IActionResult> DeleteWatch(int id)
         {
             var watch = await _context.Watches.FindAsync(id);
