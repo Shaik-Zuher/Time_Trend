@@ -131,6 +131,7 @@ export class WatchesComponent implements OnInit {
     this.selectedCategory = '';
     this.selectedBrand = '';
     this.selectedPriceRange = 20000;
+
     this.searchQuery = '';
     this.applyFilters();
   }
