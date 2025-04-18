@@ -1,28 +1,86 @@
-<header class="header">
-  <div class="header-container">
-    <a class="header-logo">TIME TREND</a>
-    <nav class="nav" id="nav-menu">
-      <!--buttons to be added-->
-    </nav>
-  </div>
-</header>
-<div class="orders-container">
-  <h2>Your Orders</h2>
-  <div *ngIf="orders.length > 0; else noOrders">
-    <div *ngFor="let order of orders" class="order-card">
-      <div class="img-container">
-        <img [src]="order.imageUrl" alt="{{ order.brand }}" class="order-image" />
+
+<div class="app-container">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="header-logo">TIME TREND</a>
+    </div>
+    <div class="navbar-menu">
+      <button class="nav-btn" (click)="router.navigate(['/watches'])">
+        <span class="icon">⌚</span>
+        <span class="text">Watches</span>
+      </button>
+      <button class="nav-btn" >
+        <span class="icon">♥</span>
+        <span class="text">Wishlist</span>
+      </button>
+      <button class="nav-btn logout" (click)="Logout()">
+        <span class="icon">↪</span>
+        <span class="text">Logout</span>
+      </button>
+    </div>
+  </nav>
+  
+  <main class="main-content">
+    
+    <div *ngIf="orders.length === 0" class="empty-state">
+      <div class="navbar-brand matter">
+        <h1>My Cart</h1>
       </div>
-      <div class="details">
-        <h3>{{ order.brand }}</h3>
-        <p>{{ order.description }}</p>
-        <p>Price: {{ order.price | currency }}</p>
+      <span class="icon">🛒</span>
+      <h2>Your cart is empty</h2>
+      <p>Browse our collection and add your favorite watches</p>
+      <button class="browse-btn" (click)="router.navigate(['/watches'])">
+        Browse Watches
+      </button>
+    </div>
+
+    <div *ngIf="orders.length > 0" class="cart-container">
+      <div class="cart-items">
+        <div class="navbar-brand">
+          <h1>My Cart</h1>
+        </div>
+        <div *ngFor="let item of orders; let i = index" class="cart-item">
+          <div class="item-image">
+            <img [src]="item.imageUrl" [alt]="item.model">
+          </div>
+          <div class="item-details">
+            <h3>{{item.brand}}</h3>
+            <p class="model">{{item.model}}</p>
+            <p class="price">{{item.price | currency}}</p>
+          </div>
+          <button class="remove-btn" (click)="removeItem(i)">
+            <span class="icon">×</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-summary">
+        <div class="summary-header">
+          <h2>Order Summary</h2>
+        </div>
+        <div class="summary-content">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>{{totalAmount | currency}}</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>Free</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span>{{totalAmount | currency}}</span>
+          </div>
+        </div>
+        <div class="summary-actions">
+          <button class="clear-btn" (click)="clearOrders()">
+            Clear Cart
+          </button>
+          <button class="checkout-btn" (click)="placeOrder()">
+            Proceed to Checkout
+          </button>
+        </div>
       </div>
     </div>
-    <br>
-    <button (click)="clearOrders()">Clear Orders</button>
-    </div>
-  <ng-template #noOrders>
-    <p class="matter">No orders found.</p>
-  </ng-template>
+  </main>
 </div>

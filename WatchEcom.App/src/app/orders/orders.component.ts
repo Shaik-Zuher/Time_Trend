@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, CurrencyPipe, NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
@@ -9,9 +10,11 @@ import { CommonModule, CurrencyPipe, NgIf } from '@angular/common';
   imports: [CommonModule, CurrencyPipe, NgIf],
 })
 export class OrdersComponent implements OnInit {
-  orders: any[] = []; 
+  orders: any[] = [];
   totalAmount: number = 0;
   userCartKey: string = '';
+
+  constructor(public router: Router) {}
 
   ngOnInit() {
     this.initializeUserCart();
@@ -25,7 +28,7 @@ export class OrdersComponent implements OnInit {
       return;
     }
 
-    this.userCartKey = `cart_${user}`; 
+    this.userCartKey = `cart_${user}`;
     this.loadOrders();
   }
 
@@ -57,12 +60,12 @@ export class OrdersComponent implements OnInit {
     }
 
     alert('✅ Order placed successfully! Thank you for shopping with us.');
-    this.clearOrders(); 
+    this.clearOrders();
   }
 
   clearOrders() {
     if (typeof window !== 'undefined' && localStorage) {
-      localStorage.removeItem(this.userCartKey); 
+      localStorage.removeItem(this.userCartKey);
       this.orders = [];
       this.totalAmount = 0;
       console.log('Cart cleared.');
@@ -70,6 +73,12 @@ export class OrdersComponent implements OnInit {
       console.warn('⚠️ localStorage is not available.');
     }
   }
+
+  Logout() {
+    localStorage.removeItem('loggedInUser');
+    this.router.navigate(['/login']);
+  }
+
   private getLoggedInUser(): string | null {
     return typeof window !== 'undefined' && localStorage
       ? localStorage.getItem('loggedInUser')
