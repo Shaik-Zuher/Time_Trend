@@ -15,12 +15,19 @@ namespace WatchEcom.Api.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Watch> Watches { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Wishlist> Wishlists { get; set; }
         //If no migrations folder create a migration by running dotnet ef migrations add Init
         //Seed data-Some sort of predefined data thats why we run dotnet ef database update
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            // Configure Wishlist relationships
+            modelBuilder.Entity<Wishlist>()
+                .HasOne(w => w.Watch)
+                .WithMany()
+                .HasForeignKey(w => w.WatchId);
+                
             // Seed data for Watches table
             modelBuilder.Entity<Watch>().HasData(
             new Watch { Id = 1, Model = "Submariner", Brand = "Rolex", Price = 12000, Description = "Luxury diving watch with stainless steel case", ImageUrl = "/images/watches/1.jpg", Category = "Luxury Series" },

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WatchEcom.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -81,6 +81,29 @@ namespace WatchEcom.Api.Migrations
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
+            migrationBuilder.CreateTable(
+                name: "Wishlists",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    WatchId = table.Column<int>(type: "int", nullable: false),
+                    DateAdded = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Wishlists", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Wishlists_Watches_WatchId",
+                        column: x => x.WatchId,
+                        principalTable: "Watches",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.InsertData(
                 table: "Watches",
                 columns: new[] { "Id", "Brand", "Category", "Description", "ImageUrl", "Model", "OrderId", "Price" },
@@ -102,6 +125,11 @@ namespace WatchEcom.Api.Migrations
                 name: "IX_Watches_OrderId",
                 table: "Watches",
                 column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Wishlists_WatchId",
+                table: "Wishlists",
+                column: "WatchId");
         }
 
         /// <inheritdoc />
@@ -109,6 +137,9 @@ namespace WatchEcom.Api.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Wishlists");
 
             migrationBuilder.DropTable(
                 name: "Watches");

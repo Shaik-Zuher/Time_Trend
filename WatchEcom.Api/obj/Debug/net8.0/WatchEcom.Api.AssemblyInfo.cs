@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WatchEcom.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4344081f36b88017040ffd9f5dbacfb27831462d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be36f8d7e75434002942b9f8b063807d70ba13ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("WatchEcom.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WatchEcom.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,8 +12,8 @@ using WatchEcom.Api.Data;
 namespace WatchEcom.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250416200947_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20250418184845_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -212,11 +212,47 @@ namespace WatchEcom.Api.Migrations
                         });
                 });
 
+            modelBuilder.Entity("WatchEcom.Api.Models.Wishlist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateAdded")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("WatchId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("WatchId");
+
+                    b.ToTable("Wishlists");
+                });
+
             modelBuilder.Entity("WatchEcom.Api.Models.Watch", b =>
                 {
                     b.HasOne("WatchEcom.Api.Models.Order", null)
                         .WithMany("Watches")
                         .HasForeignKey("OrderId");
+                });
+
+            modelBuilder.Entity("WatchEcom.Api.Models.Wishlist", b =>
+                {
+                    b.HasOne("WatchEcom.Api.Models.Watch", "Watch")
+                        .WithMany()
+                        .HasForeignKey("WatchId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Watch");
                 });
 
             modelBuilder.Entity("WatchEcom.Api.Models.Order", b =>

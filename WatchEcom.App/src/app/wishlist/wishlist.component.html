@@ -1,0 +1,53 @@
+<div class="app-container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <h1>My Wishlist</h1>
+      </div>
+      <div class="navbar-menu">
+        <button class="nav-btn" (click)="router.navigate(['/watches'])">
+          <span class="icon">⌚</span>
+          <span class="text">Home</span>
+        </button>
+        <button class="nav-btn" (click)="router.navigate(['/orders'])">
+            <a class="nav-link cart-link">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-count">{{ cart.length }}</span>
+              </a>
+        </button>
+        <button class="nav-btn logout" (click)="Logout()">
+          <span class="icon">↪</span>
+          <span class="text">Logout</span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div *ngIf="wishlistItems.length === 0" class="empty-state">
+        <span class="icon">♥</span>
+        <h2>Your wishlist is empty</h2>
+        <p>Browse our collection and add your favorite watches</p>
+        <button class="browse-btn" (click)="router.navigate(['/watches'])">
+          Browse Watches
+        </button>
+      </div>
+
+      <div *ngIf="wishlistItems.length > 0" class="watches-grid">
+        <div *ngFor="let item of wishlistItems" class="watch-card">
+          <div class="watch-image">
+            <img [src]="item.watch.imageUrl" [alt]="item.watch.model">
+            <button class="remove-btn" (click)="removeFromWishlist(item.watchId)">
+              ×
+            </button>
+          </div>
+          <div class="watch-info">
+            <h3>{{item.watch.brand}}</h3>
+            <p class="model">{{item.watch.model}}</p>
+            <p class="price">{{item.watch.price | currency}}</p>
+            <button class="add-to-cart-btn" (click)="addToCart(item.watch)">
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>

@@ -6,14 +6,20 @@
         <span class="nav-name">Time Trend</span>
         <div class="nav-menu">
           <ul class="nav-list">
-            <li class="nav-item"><a class="nav-link active">Home</a></li>
+            <li class="nav-item cart-link"><a class="nav-link active">Home</a></li>
+            <li class="nav-item cart-link" (click)="viewWishlist()">
+              <a class="nav-link active">Wishlist</a>
+            </li>
             <li class="nav-item" (click)="viewCart()">
               <a class="nav-link cart-link">
                 <span class="cart-icon">🛒</span>
                 <span class="cart-count">{{ cart.length }}</span>
               </a>
             </li>
-            <li class="nav-item" (click)="Logout()"><a href="#" class="nav-link" id="log">Logout</a></li>
+            <button class="nav-btn logout" (click)="Logout()">
+              <span class="icon">↪</span>
+              <span class="text">Logout</span>
+            </button>
           </ul>
         </div>
       </div>
@@ -78,6 +84,10 @@
           <div class="watch-badge" *ngIf="watch.discount">-{{ watch.discount }}%</div>
           <div class="watch-image-container">
             <img [src]="watch.imageUrl" alt="{{ watch.brand }}" class="watch-image" />
+            <button class="wishlist-btn" (click)="toggleWishlist(watch)" 
+                      [class.wishlisted]="isInWishlist(watch.id)">
+                {{isInWishlist(watch.id) ? '♥' : '♡'}}
+            </button>
           </div>
           <div class="watch-details">
             <h3 class="watch-brand">{{ watch.brand }}</h3>
